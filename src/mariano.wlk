@@ -1,5 +1,4 @@
 import golosinas.*
-import sabores.*
 
 object mariano {
 	const bolsaDeGolosinas = []

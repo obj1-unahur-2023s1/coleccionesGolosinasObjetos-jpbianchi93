@@ -1,11 +1,9 @@
-import sabores.*
-
 object bombon {
 	var peso = 15
 	const mordisco = {peso = (peso * 0.8) - 1}
 	
 	method precio() = 5
-	method sabor() = frutilla
+	method sabor() = "frutilla"
 	method peso() = peso
 	method contieneGluten() = false
 	method recibirMordisco() {mordisco.apply()}
@@ -16,7 +14,7 @@ object alfajor {
 	const mordisco = {peso *= 0.8}
 	
 	method precio() = 12
-	method sabor() = chocolate
+	method sabor() = "chocolate"
 	method peso() = peso
 	method contieneGluten() = true	
 	method recibirMordisco() {mordisco.apply()}
@@ -27,7 +25,7 @@ object caramelo{
 	const mordisco = {peso = 0.max(peso - 1)}
 	
 	method precio() = 1
-	method sabor() = frutilla
+	method sabor() = "frutilla"
 	method peso() = peso
 	method contieneGluten() = false	
 	method recibirMordisco() {mordisco.apply()}
@@ -38,7 +36,7 @@ object chupetin{
 	const mordisco = {peso = 2.max(peso*0.9)}
 	
 	method precio() = 2
-	method sabor() = naranja
+	method sabor() = "naranja"
 	method peso() = peso
 	method contieneGluten() = false
 	method recibirMordisco() {mordisco.apply()}
@@ -49,7 +47,7 @@ object oblea{
 	const mordisco = {if(peso>70){peso*=0.5}else{peso -= peso*0.25}}
 
 	method precio() = 5
-	method sabor() = vainilla
+	method sabor() = "vainilla"
 	method peso() = peso
 	method contieneGluten() = true
 	method recibirMordisco() {mordisco.apply()}
@@ -64,7 +62,7 @@ object chocolatin{
 		precio = gramos*0.5
 	}
 	method precio() = precio
-	method sabor() = chocolate
+	method sabor() = "chocolate"
 	method peso() = peso
 	method contieneGluten() = true
 	method recibirMordisco() {mordisco.apply()}
@@ -94,8 +92,8 @@ object golosinaBaniada{
 object pastillaTuttiFrutti{
 	var nMordisco = 0
 	var property contieneGluten = true
-	var sabor = frutilla
-	const gusto = [frutilla, chocolate, naranja]
+	var sabor = "frutilla"
+	const gusto = ["frutilla", "chocolate", "naranja"]
 	const mordisco = {sabor = gusto.get(nMordisco%3)}
 	
 	method peso()= 5

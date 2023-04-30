@@ -1,6 +1,6 @@
 import mariano.*
 import golosinas.*
-import sabores.*
+
 test "Mariano" {
 
 chocolatin.pesoInicial(40)
@@ -20,12 +20,12 @@ chocolatin.pesoInicial(40)
 	assert.equals([38 , 4 , 11] , mariano.bolsaDeGolosinas().map({golosina => golosina.peso()}))
 	assert.that(mariano.hayGolosinaSinTACC())
 	assert.notThat(mariano.preciosCuidados())
-	assert.equals(chocolatin , mariano.golosinaDeSabor(chocolate))
-	assert.equals([caramelo , bombon] , mariano.golosinasDeSabor(frutilla))
-	assert.equals(#{chocolate , frutilla} , mariano.sabores())
+	assert.equals(chocolatin , mariano.golosinaDeSabor("chocolate"))
+	assert.equals([caramelo , bombon] , mariano.golosinasDeSabor("frutilla"))
+	assert.equals(#{"chocolate" , "frutilla"} , mariano.sabores())
 	assert.equals(chocolatin , mariano.golosinaMasCara())
 	assert.equals(53 , mariano.pesoGolosinas())
 	assert.equals(#{alfajor , chupetin} , mariano.golosinasFaltantes(#{alfajor , bombon , chocolatin , chupetin}))
-	assert.equals(#{melon , vainilla} , mariano.gustosFaltantes(#{melon , chocolate , frutilla , vainilla}))
+	assert.equals(#{"melon" , "vainilla"} , mariano.gustosFaltantes(#{"melon" , "chocolate" , "frutilla" , "vainilla"}))
 	
 }
